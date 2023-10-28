@@ -476,7 +476,12 @@ static int logicConditionCompute(
             break;    
 
         case LOGIC_CONDITION_ATAN2:
-            return constrain(atan2_approx((float) operandB, (float) operandA), INT32_MIN, INT32_MAX);
+            temporaryValue = RADIANS_TO_DECIDEGREES(atan2_approx((float) operandB, (float) operandA));
+            if (temporaryValue < 0) {
+                return 1800 + (1800 + temporaryValue);
+            } else {
+              return RADIANS_TO_DECIDEGREES(atan2_approx((float) operandB, (float) operandA));
+            }
             break;
 
         case LOGIC_CONDITION_LENGTH_XY:

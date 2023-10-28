@@ -97,6 +97,8 @@ IPF can be edited using INAV Configurator user interface, or via CLI. To use COn
 | 49            | TIMER                         | A simple on - off timer. `true` for the duration of `Operand A` [ms]. Then `false` for the duration of `Operand B` [ms]. |
 | 50            | DELTA                         | This returns `true` when the value of `Operand A` has changed by the value of `Operand B` or greater within 100ms. |
 | 51            | APPROX_EQUAL                  | `true` if `Operand B` is within 1% of `Operand A`. |
+| 62            | LOGIC_CONDITION_ATAN2         | Given X coordinate `Operand A` and Y coordinate `Operand B`, returns angular component of the vector in degrees 0-3600. |
+| 63            | LOGIC_CONDITION_LENGTH_XY     | Given X coordinate `Operand A` and Y coordinate `Operand B`, returns the magnitude component of the vector. |
 
 ### Operands
 

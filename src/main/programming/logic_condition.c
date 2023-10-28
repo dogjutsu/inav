@@ -474,6 +474,14 @@ static int logicConditionCompute(
                 return false;
             }
             break;    
+
+        case LOGIC_CONDITION_ATAN2:
+            return constrain(atan2_approx((float) operandB, (float) operandA), INT32_MIN, INT32_MAX);
+            break;
+
+        case LOGIC_CONDITION_LENGTH_XY:
+            return calc_length_pythagorean_2D((float) operandA, (float) operandB);
+            break;
         
         default:
             return false;
